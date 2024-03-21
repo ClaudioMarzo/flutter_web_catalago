@@ -14,6 +14,7 @@ class ColorStyle {
   Color get darkwhite => const Color.fromRGBO(240, 240, 245, 1);
   Color get blue => const Color.fromRGBO(63, 142, 189, 1);
   Color get gray => const Color.fromRGBO(104, 112, 118, 1);
+  Color get black => const Color.fromRGBO(0, 41, 59, 1);
 }
 
 extension ColorsAppExtension on BuildContext {
