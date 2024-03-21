@@ -12,7 +12,7 @@ class TextStyles {
 
   String get font => 'Poppins';
 
-  TextStyle get textLight => TextStyle(fontWeight: FontWeight.w300, fontFamily: font);
+  TextStyle get extLight => TextStyle(fontWeight: FontWeight.w300, fontFamily: font);
 
   TextStyle get textRegular => TextStyle(fontWeight: FontWeight.normal, fontFamily: font);
 
@@ -22,9 +22,7 @@ class TextStyles {
 
   TextStyle get textExtraBold => TextStyle(fontWeight: FontWeight.w800, fontFamily: font);
 
-  TextStyle get textButtonLabel => textBold.copyWith(fontSize: 14);
-
-  TextStyle get textTitle => textExtraBold.copyWith(fontSize: 28);
+  TextStyle get textButtonLabel => textMedium.copyWith(fontSize: 16);
 }
 
 extension TextStylesExtension on BuildContext {

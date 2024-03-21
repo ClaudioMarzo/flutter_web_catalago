@@ -17,5 +17,5 @@ class ColorStyle {
 }
 
 extension ColorsAppExtension on BuildContext {
-  ColorStyle get colors => ColorStyle.i;
+  ColorStyle? get colors => ColorStyle.i;
 }
