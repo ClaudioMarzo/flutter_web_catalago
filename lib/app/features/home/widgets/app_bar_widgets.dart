@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:katyfestacatalago/app/core/ui/style/color_style.dart';
 import 'package:katyfestacatalago/app/core/ui/style/text_style.dart';
+import 'package:katyfestacatalago/app/core/ui/style/color_style.dart';
+import 'package:katyfestacatalago/app/features/auth/auth_dialog_page.dart';
 
 class AppBarWidgets extends StatelessWidget implements PreferredSizeWidget {
   final double height;
@@ -105,7 +106,10 @@ class AppBarWidgets extends StatelessWidget implements PreferredSizeWidget {
                           SizedBox(width: widthbetweenuttons),
                           InkWell(
                             onTap: () {
-                              Navigator.pushNamed(context, "/account");
+                              showDialog(
+                                context: context,
+                                builder: (context) => const AuthDialogPage(),
+                              );
                             },
                             child: Container(
                               height: 60,
