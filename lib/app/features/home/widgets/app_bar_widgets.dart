@@ -13,20 +13,20 @@ class AppBarWidgets extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     double filtertextsize = 20.0;
-    double widthbetweenuttons = 15.0;
+    double widthbetweenuttons = 22.0;
     double profileimagesize = 24.0;
     return PreferredSize(
       preferredSize: Size(MediaQuery.of(context).size.width, height + 60),
       // child: Container(
-      //   // decoration: const BoxDecoration(
-      //   //   gradient: LinearGradient(
-      //   //     colors: <Color>[Colors.blue, Colors.pink],
-      //   //   ),
-      //   // ),
+      //   decoration: const BoxDecoration(
+      //     gradient: LinearGradient(
+      //       colors: <Color>[Colors.blue, Colors.pink],
+      //     ),
+      //   ),
       child: Stack(
         children: <Widget>[
           Positioned(
-            top: 60.0,
+            top: 40.0,
             left: 20.0,
             right: 20.0,
             child: SizedBox(
@@ -43,7 +43,7 @@ class AppBarWidgets extends StatelessWidget implements PreferredSizeWidget {
                             onTap: () {},
                             child: Text(
                               "Produtos",
-                              style: TextStyles.i.textExtraBold.copyWith(fontSize: filtertextsize),
+                              style: TextStyles.i.textMedium.copyWith(fontSize: filtertextsize),
                             ),
                           ),
                           SizedBox(width: widthbetweenuttons),
@@ -98,14 +98,14 @@ class AppBarWidgets extends StatelessWidget implements PreferredSizeWidget {
                                 top: 5,
                               ),
                               child: Icon(
-                                Icons.supervisor_account_sharp,
+                                Icons.shopping_cart_outlined,
                               ),
                             ),
                           ),
                           SizedBox(width: widthbetweenuttons),
                           InkWell(
                             onTap: () {
-                              Navigator.pushNamed(context, "write your route");
+                              Navigator.pushNamed(context, "/account");
                             },
                             child: Container(
                               height: 60,
