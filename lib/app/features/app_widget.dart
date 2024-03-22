@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:katyfestacatalago/app/features/cart/cart_page.dart';
 import 'package:katyfestacatalago/app/features/home/home_page.dart';
+import 'package:katyfestacatalago/app/features/auth/auth_page.dart';
 import 'package:katyfestacatalago/app/core/ui/theme/theme_config.dart';
 
 class AppWidget extends StatefulWidget {
@@ -19,6 +21,8 @@ class _AppWidgetState extends State<AppWidget> {
       initialRoute: '/',
       routes: {
         '/': (_) => const HomePage(),
+        '/account': (_) => const AuthPage(),
+        '/cart': (_) => const CartPage(),
       },
     );
   }
