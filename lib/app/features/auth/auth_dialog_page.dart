@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:katyfestacatalago/app/core/ui/style/color_style.dart';
 import 'package:katyfestacatalago/app/core/ui/style/text_style.dart';
+import 'package:katyfestacatalago/app/core/ui/style/color_style.dart';
+import 'package:katyfestacatalago/app/features/auth/credentials/buttom_custom_credentials.dart';
+import 'package:katyfestacatalago/app/features/auth/credentials/butttom_google_credentials.dart';
 
 class AuthDialogPage extends StatefulWidget {
   const AuthDialogPage({super.key});
@@ -29,10 +31,15 @@ class _AccountWidgetsState extends State<AuthDialogPage> {
 
   @override
   Widget build(BuildContext context) {
-    double heightButton = 56.0;
-    double heightImput = 20.0;
+    double heightButton = 25.0;
+    double widthButton = 62.0;
+    double heightImput = 18.0;
+    double iconImputSize = 23.0;
+    double iconWidthFactor = 3.0;
+    double profileimagesize = 15.0;
     return Dialog(
-      backgroundColor: ColorStyle.i.white,
+      backgroundColor: ColorStyle.i.darkwhite,
+      surfaceTintColor: Colors.transparent,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(20.0),
       ),
@@ -50,12 +57,11 @@ class _AccountWidgetsState extends State<AuthDialogPage> {
               children: <Widget>[
                 Center(
                   child: Padding(
-                    padding: const EdgeInsets.only(bottom: 30, top: 30),
+                    padding: const EdgeInsets.only(left: 25, right: 25, bottom: 25, top: 25),
                     child: Text(
                       'Conta',
                       style: TextStyles.i.textExtraBold.copyWith(
-                        fontSize: 32,
-                        color: ColorStyle.i.black,
+                        fontSize: 33,
                       ),
                     ),
                   ),
@@ -74,6 +80,14 @@ class _AccountWidgetsState extends State<AuthDialogPage> {
                   decoration: InputDecoration(
                     contentPadding: EdgeInsets.all(heightImput),
                     hintText: "E-mail",
+                    suffixIcon: Align(
+                      widthFactor: iconWidthFactor,
+                      child: Icon(
+                        color: ColorStyle.i.lightgray,
+                        size: iconImputSize,
+                        Icons.person,
+                      ),
+                    ),
                   ),
                 ),
                 const SizedBox(height: 30),
@@ -91,115 +105,51 @@ class _AccountWidgetsState extends State<AuthDialogPage> {
                   decoration: InputDecoration(
                     contentPadding: EdgeInsets.all(heightImput),
                     hintText: "Senha",
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(bottom: 30, top: 30),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: <Widget>[
-                      Flexible(
-                        flex: 1,
-                        child: Container(
-                          height: heightButton,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(8),
-                            color: ColorStyle.i.blue,
-                            // gradient: LinearGradient(
-                            //   begin: Alignment.topCenter,
-                            //   end: Alignment.bottomCenter,
-                            //   colors: <Color>[
-                            //     ColorStyle.i.blue,
-                            //     ColorStyle.i.lightblue,
-                            //   ],
-                            // ),
-                          ),
-                          width: double.maxFinite,
-                          child: TextButton(
-                            onPressed: () {},
-                            child: Text(
-                              'Fazer Login',
-                              style: TextStyles.i.textMedium.copyWith(
-                                fontSize: 16,
-                                color: ColorStyle.i.white,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                      const SizedBox(width: 10),
-                      Flexible(
-                        flex: 1,
-                        child: Container(
-                          height: heightButton,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(8),
-                            color: ColorStyle.i.blue,
-                            // gradient: LinearGradient(
-                            //   begin: Alignment.topCenter,
-                            //   end: Alignment.bottomCenter,
-                            //   colors: <Color>[
-                            //     ColorStyle.i.blue,
-                            //     ColorStyle.i.lightblue,
-                            //   ],
-                            // ),
-                          ),
-                          width: double.maxFinite,
-                          child: TextButton(
-                            onPressed: () {},
-                            child: Text(
-                              'Cadastrar',
-                              style: TextStyles.i.textMedium.copyWith(
-                                fontSize: 16,
-                                color: ColorStyle.i.white,
-                              ),
-                            ),
-                          ),
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(bottom: 30),
-                  child: Flexible(
-                    flex: 1,
-                    child: Container(
-                      height: heightButton,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(8),
-                        color: ColorStyle.i.white,
-                        // gradient: LinearGradient(
-                        //   begin: Alignment.topCenter,
-                        //   end: Alignment.bottomCenter,
-                        //   colors: <Color>[
-                        //     ColorStyle.i.blue,
-                        //     ColorStyle.i.lightblue,
-                        //   ],
-                        // ),
-                      ),
-                      width: double.maxFinite,
-                      child: TextButton(
-                        onPressed: () {},
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(Icons.person, color: ColorStyle.i.gray),
-                            const SizedBox(width: 10),
-                            Text(
-                              'Continuar com Google',
-                              style: TextStyles.i.textMedium.copyWith(
-                                fontSize: 16,
-                                color: ColorStyle.i.gray,
-                              ),
-                            ),
-                          ],
-                        ),
+                    suffixIcon: Align(
+                      widthFactor: iconWidthFactor,
+                      child: Icon(
+                        color: ColorStyle.i.lightgray,
+                        size: iconImputSize,
+                        Icons.lock,
                       ),
                     ),
                   ),
                 ),
+                const SizedBox(height: 30),
+                Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Flexible(
+                      flex: 1,
+                      child: ButtomCustomCredentials(
+                        width: widthButton,
+                        height: heightButton,
+                        imputText: 'Fazer login',
+                      ),
+                    ),
+                    Flexible(
+                      flex: 1,
+                      child: ButtomCustomCredentials(
+                        width: widthButton,
+                        height: heightButton,
+                        imputText: 'Cadastrar',
+                      ),
+                    )
+                  ],
+                ),
+                const SizedBox(height: 30),
+                Flexible(
+                  flex: 1,
+                  child: ButttomGoogleCredentials(
+                    width: widthButton,
+                    height: heightButton,
+                    assetImage: 'assets/images/google.png',
+                    sizeImagem: profileimagesize,
+                    imputText: 'Continuar com Google',
+                  ),
+                ),
+                const SizedBox(height: 30),
               ],
             ),
           ),
