@@ -8,6 +8,7 @@ class ThemeConfig {
 
   static final _defaultInputBorder = OutlineInputBorder(
     borderRadius: BorderRadius.circular(8),
+    borderSide: BorderSide.none,
   );
 
   static final theme = ThemeData(
@@ -28,14 +29,15 @@ class ThemeConfig {
       style: AppStyles.i?.primaryButton,
     ),
     inputDecorationTheme: InputDecorationTheme(
-      fillColor: Colors.white,
+      focusColor: ColorStyle.i.darkwhite,
+      fillColor: ColorStyle.i.white,
       filled: true,
       isDense: true,
       contentPadding: const EdgeInsets.all(10),
       border: _defaultInputBorder,
-      enabledBorder: _defaultInputBorder,
-      focusedBorder: _defaultInputBorder,
-      labelStyle: TextStyles.i.textRegular.copyWith(color: Colors.black),
+      // enabledBorder: _defaultInputBorder,
+      // focusedBorder: _defaultInputBorder,
+      labelStyle: TextStyles.i.textRegular.copyWith(color: Colors.black, fontSize: 21),
       errorStyle: TextStyles.i.textRegular.copyWith(color: Colors.red),
     ),
   );
