@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:katyfestacatalago/app/core/ui/style/text_style.dart';
 import 'package:katyfestacatalago/app/core/ui/style/color_style.dart';
-import 'package:katyfestacatalago/app/features/auth/credentials/buttom_custom_credentials.dart';
-import 'package:katyfestacatalago/app/features/auth/credentials/butttom_google_credentials.dart';
-import 'package:katyfestacatalago/app/features/auth/credentials/imput_custom_credentials.dart';
+import 'package:katyfestacatalago/app/features/auth/widgets/imput_custom_widgets.dart';
+import 'package:katyfestacatalago/app/features/auth/widgets/buttom_custom_widgets.dart';
+import 'package:katyfestacatalago/app/features/auth/widgets/butttom_google_widgets.dart';
 
 class AuthDialogPage extends StatefulWidget {
   const AuthDialogPage({super.key});
@@ -65,19 +65,21 @@ class _AccountWidgetsState extends State<AuthDialogPage> {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      ImputCustomCredentials(
+                      ImputCustomWidgets(
                         focus: textFocusNodeEmail,
                         textImputType: TextInputType.emailAddress,
                         textController: textControllerEmail,
                         imputText: 'E-mail',
                         icon: Icons.person,
+                        isPassword: false,
                       ),
-                      ImputCustomCredentials(
+                      ImputCustomWidgets(
                         focus: textFocusNodePassword,
                         textImputType: TextInputType.visiblePassword,
                         textController: textControllerPassword,
                         imputText: 'Senha',
                         icon: Icons.lock,
+                        isPassword: true,
                       ),
                     ],
                   ),
@@ -89,14 +91,14 @@ class _AccountWidgetsState extends State<AuthDialogPage> {
                   children: <Widget>[
                     Flexible(
                       flex: 1,
-                      child: ButtomCustomCredentials(
+                      child: ButtomCustomWidgets(
                         height: heightButton,
                         imputText: 'Fazer Login',
                       ),
                     ),
                     Flexible(
                       flex: 1,
-                      child: ButtomCustomCredentials(
+                      child: ButtomCustomWidgets(
                         height: heightButton,
                         imputText: 'Cadastrar',
                       ),
@@ -106,7 +108,7 @@ class _AccountWidgetsState extends State<AuthDialogPage> {
                 const SizedBox(height: 30),
                 Flexible(
                   flex: 1,
-                  child: ButttomGoogleCredentials(
+                  child: ButttomGoogleWidgets(
                     height: heightButton,
                     assetImage: 'assets/images/google.png',
                     sizeImagem: profileimagesize,
