@@ -2,21 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:katyfestacatalago/app/core/ui/style/color_style.dart';
 
 class ImputCustomWidgets extends StatefulWidget {
-  final FocusNode focus;
-  final TextInputType textImputType;
-  final TextEditingController textController;
-  final String imputText;
   final IconData icon;
   final bool isPassword;
+  final FocusNode focus;
+  final String imputText;
+  final TextInputType textImputType;
+  final TextEditingController textController;
 
   const ImputCustomWidgets({
     super.key,
+    required this.icon,
     required this.focus,
+    required this.imputText,
+    required this.isPassword,
     required this.textImputType,
     required this.textController,
-    required this.imputText,
-    required this.icon,
-    required this.isPassword,
   });
 
   @override
@@ -24,20 +24,24 @@ class ImputCustomWidgets extends StatefulWidget {
 }
 
 class _ImputCustomWidgetsState extends State<ImputCustomWidgets> {
-  final bool _obscureText = true;
-  final bool _showIcon = false;
+  bool _obscureText = true;
+  bool _showIcon = false;
 
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   widget.textController.addListener(_onTextChanged);
-  // }
+  @override
+  void initState() {
+    super.initState();
+    widget.textController.addListener(_onTextChanged);
+  }
 
-  // @override
-  // void dispose() {
-  //   widget.textController.removeListener(_onTextChanged);
-  //   super.dispose();
-  // }
+  @override
+  void dispose() {
+    widget.textController.removeListener(_onTextChanged);
+    super.dispose();
+  }
+
+  void _onTextChanged() {
+    setState(() => _showIcon = widget.textController.text.isNotEmpty);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -57,23 +61,26 @@ class _ImputCustomWidgetsState extends State<ImputCustomWidgets> {
       decoration: InputDecoration(
         contentPadding: const EdgeInsets.all(20.0),
         hintText: widget.imputText,
-        suffixIcon: Align(
-          widthFactor: 3.0,
-          child: widget.isPassword && _showIcon
-              ? IconButton(
-                  icon: Icon(
+        suffixIcon: widget.isPassword && _showIcon
+            ? IconButton(
+                icon: Align(
+                  widthFactor: 2.4,
+                  child: Icon(
                     _obscureText ? Icons.visibility_off : Icons.visibility,
                     color: ColorStyle.i.lightgray,
                     size: 23,
                   ),
-                  onPressed: () {},
-                )
-              : Icon(
+                ),
+                onPressed: () => setState(() => _obscureText = !_obscureText),
+              )
+            : Align(
+                widthFactor: 3.0,
+                child: Icon(
                   widget.icon,
                   color: ColorStyle.i.lightgray,
                   size: 23,
                 ),
-        ),
+              ),
       ),
     );
   }

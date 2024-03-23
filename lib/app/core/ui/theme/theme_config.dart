@@ -13,12 +13,12 @@ class ThemeConfig {
 
   static final theme = ThemeData(
     scaffoldBackgroundColor: ColorStyle.i.darkwhite,
-    appBarTheme: AppBarTheme(
-      backgroundColor: ColorStyle.i.darkwhite,
-      elevation: 0,
-      centerTitle: true,
-      iconTheme: IconThemeData(color: ColorStyle.i.white),
-    ),
+    // appBarTheme: AppBarTheme(
+    //   backgroundColor: ColorStyle.i.darkwhite,
+    //   elevation: 0,
+    //   centerTitle: true,
+    //   iconTheme: IconThemeData(color: ColorStyle.i.white),
+    // ),
     primaryColor: ColorStyle.i.darkwhite,
     colorScheme: ColorScheme.fromSeed(
       seedColor: ColorStyle.i.white,
@@ -37,7 +37,7 @@ class ThemeConfig {
       border: _defaultInputBorder,
       // enabledBorder: _defaultInputBorder,
       // focusedBorder: _defaultInputBorder,
-      labelStyle: TextStyles.i.textRegular.copyWith(color: Colors.black, fontSize: 21),
+      labelStyle: TextStyles.i.textRegular.copyWith(color: ColorStyle.i.black, fontSize: 14),
       errorStyle: TextStyles.i.textRegular.copyWith(color: Colors.red),
     ),
   );

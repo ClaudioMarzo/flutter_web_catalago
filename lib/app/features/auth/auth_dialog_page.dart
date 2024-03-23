@@ -58,6 +58,7 @@ class _AccountWidgetsState extends State<AuthDialogPage> {
                     textAlign: TextAlign.center,
                   ),
                 ),
+                const SizedBox(height: 20),
                 SizedBox(
                   width: 420,
                   height: 172,
