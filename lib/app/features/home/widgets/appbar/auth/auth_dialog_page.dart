@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:katyfestacatalago/app/core/ui/style/text_style.dart';
 import 'package:katyfestacatalago/app/core/ui/style/color_style.dart';
-import 'package:katyfestacatalago/app/features/auth/widgets/imput_custom_widgets.dart';
-import 'package:katyfestacatalago/app/features/auth/widgets/buttom_custom_widgets.dart';
-import 'package:katyfestacatalago/app/features/auth/widgets/butttom_google_widgets.dart';
+import 'package:katyfestacatalago/app/features/home/widgets/appbar/auth/widgets/imput_custom_widgets.dart';
+import 'package:katyfestacatalago/app/features/home/widgets/appbar/auth/widgets/buttom_custom_widgets.dart';
+import 'package:katyfestacatalago/app/features/home/widgets/appbar/auth/widgets/butttom_google_widgets.dart';
 
 class AuthDialogPage extends StatefulWidget {
   const AuthDialogPage({super.key});
