@@ -3,6 +3,7 @@ import 'package:katyfestacatalago/app/core/ui/style/text_style.dart';
 import 'package:katyfestacatalago/app/core/ui/style/color_style.dart';
 import 'package:katyfestacatalago/app/features/auth/credentials/buttom_custom_credentials.dart';
 import 'package:katyfestacatalago/app/features/auth/credentials/butttom_google_credentials.dart';
+import 'package:katyfestacatalago/app/features/auth/credentials/imput_custom_credentials.dart';
 
 class AuthDialogPage extends StatefulWidget {
   const AuthDialogPage({super.key});
@@ -31,11 +32,7 @@ class _AccountWidgetsState extends State<AuthDialogPage> {
 
   @override
   Widget build(BuildContext context) {
-    double heightButton = 25.0;
-    double widthButton = 62.0;
-    double heightImput = 18.0;
-    double iconImputSize = 23.0;
-    double iconWidthFactor = 3.0;
+    double heightButton = 56.0;
     double profileimagesize = 15.0;
     return Dialog(
       backgroundColor: ColorStyle.i.darkwhite,
@@ -47,75 +44,45 @@ class _AccountWidgetsState extends State<AuthDialogPage> {
         child: SizedBox(
           width: 500,
           child: Padding(
-            padding: const EdgeInsets.only(
-              left: 40.0,
-              right: 40.0,
-            ),
+            padding: const EdgeInsets.all(40),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
-                Center(
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 25, right: 25, bottom: 25, top: 25),
-                    child: Text(
-                      'Conta',
-                      style: TextStyles.i.textExtraBold.copyWith(
-                        fontSize: 33,
-                      ),
-                    ),
+                SizedBox(
+                  height: 48,
+                  width: 420,
+                  child: Text(
+                    'Conta',
+                    style: TextStyles.i.textMedium.copyWith(fontSize: 32),
+                    textAlign: TextAlign.center,
                   ),
                 ),
-                TextField(
-                  focusNode: textFocusNodeEmail,
-                  keyboardType: TextInputType.emailAddress,
-                  textInputAction: TextInputAction.next,
-                  controller: textControllerEmail,
-                  autofocus: false,
-                  onChanged: (value) {},
-                  onSubmitted: (value) {
-                    textFocusNodeEmail.unfocus();
-                    FocusScope.of(context).requestFocus(textFocusNodeEmail);
-                  },
-                  decoration: InputDecoration(
-                    contentPadding: EdgeInsets.all(heightImput),
-                    hintText: "E-mail",
-                    suffixIcon: Align(
-                      widthFactor: iconWidthFactor,
-                      child: Icon(
-                        color: ColorStyle.i.lightgray,
-                        size: iconImputSize,
-                        Icons.person,
+                SizedBox(
+                  width: 420,
+                  height: 172,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      ImputCustomCredentials(
+                        focus: textFocusNodeEmail,
+                        textImputType: TextInputType.emailAddress,
+                        textController: textControllerEmail,
+                        imputText: 'E-mail',
+                        icon: Icons.person,
                       ),
-                    ),
+                      ImputCustomCredentials(
+                        focus: textFocusNodePassword,
+                        textImputType: TextInputType.visiblePassword,
+                        textController: textControllerPassword,
+                        imputText: 'Senha',
+                        icon: Icons.lock,
+                      ),
+                    ],
                   ),
                 ),
-                const SizedBox(height: 30),
-                TextField(
-                  focusNode: textFocusNodePassword,
-                  keyboardType: TextInputType.streetAddress,
-                  textInputAction: TextInputAction.next,
-                  controller: textControllerPassword,
-                  autofocus: false,
-                  onChanged: (value) {},
-                  onSubmitted: (value) {
-                    textFocusNodeEmail.unfocus();
-                    FocusScope.of(context).requestFocus(textFocusNodePassword);
-                  },
-                  decoration: InputDecoration(
-                    contentPadding: EdgeInsets.all(heightImput),
-                    hintText: "Senha",
-                    suffixIcon: Align(
-                      widthFactor: iconWidthFactor,
-                      child: Icon(
-                        color: ColorStyle.i.lightgray,
-                        size: iconImputSize,
-                        Icons.lock,
-                      ),
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 30),
+                const SizedBox(height: 20),
                 Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -123,15 +90,13 @@ class _AccountWidgetsState extends State<AuthDialogPage> {
                     Flexible(
                       flex: 1,
                       child: ButtomCustomCredentials(
-                        width: widthButton,
                         height: heightButton,
-                        imputText: 'Fazer login',
+                        imputText: 'Fazer Login',
                       ),
                     ),
                     Flexible(
                       flex: 1,
                       child: ButtomCustomCredentials(
-                        width: widthButton,
                         height: heightButton,
                         imputText: 'Cadastrar',
                       ),
@@ -142,14 +107,12 @@ class _AccountWidgetsState extends State<AuthDialogPage> {
                 Flexible(
                   flex: 1,
                   child: ButttomGoogleCredentials(
-                    width: widthButton,
                     height: heightButton,
                     assetImage: 'assets/images/google.png',
                     sizeImagem: profileimagesize,
                     imputText: 'Continuar com Google',
                   ),
                 ),
-                const SizedBox(height: 30),
               ],
             ),
           ),
