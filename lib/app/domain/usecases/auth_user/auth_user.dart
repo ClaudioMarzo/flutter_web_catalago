@@ -1,4 +1,4 @@
-import 'package:katyfestacatalago/app/core/entities/user_entity.dart';
+import 'package:katyfestacatalago/app/domain/entities/user_entity.dart';
 import 'package:katyfestacatalago/app/domain/interfaces/usecases/Iauth_user_usecases.dart';
 import 'package:katyfestacatalago/app/domain/interfaces/repositore/Iauth_user_repository.dart';
 

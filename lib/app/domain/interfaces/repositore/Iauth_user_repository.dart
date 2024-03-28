@@ -1,5 +1,5 @@
-import 'package:katyfestacatalago/app/core/entities/user_entity.dart';
+import 'package:katyfestacatalago/app/domain/entities/user_entity.dart';
 
 abstract class IAuthUserRepository {
-  bool signInWithEmailAndPassword(UserEntity credentials);
+  Future<bool> signInWithEmailAndPassword(UserEntity credentials);
 }

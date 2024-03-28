@@ -1,13 +1,12 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:katyfestacatalago/app/data/dtos/sign_up_dto.dart';
-import 'package:katyfestacatalago/app/data/dtos/google_sign_in_dto.dart';
-import 'package:katyfestacatalago/app/data/interfaces/Icreate_user_datasource.dart';
+import 'package:katyfestacatalago/app/infrastructure/dtos/sign_up_dto.dart';
+import 'package:katyfestacatalago/app/infrastructure/datasources/interfaces/Icreate_user_datasource.dart';
 
-class CreateUserFirebaseDatasource implements ICreateUserDataSource {
+class CreateUserDatasourceFirebase implements ICreateUserDataSource {
   final FirebaseAuth _firebaseAuth;
   final GoogleAuthProvider _googleProvider;
 
-  CreateUserFirebaseDatasource(this._firebaseAuth, this._googleProvider);
+  CreateUserDatasourceFirebase(this._firebaseAuth, this._googleProvider);
 
   @override
   Future<User?> createUserWithEmailAndPassword(SignUpDto credentials) async {

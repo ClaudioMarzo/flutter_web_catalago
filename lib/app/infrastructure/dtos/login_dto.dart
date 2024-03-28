@@ -1,4 +1,4 @@
-import 'package:katyfestacatalago/app/core/entities/user_entity.dart';
+import 'package:katyfestacatalago/app/domain/entities/user_entity.dart';
 
 class LoginDto extends UserEntity {
   String emailLogin;
