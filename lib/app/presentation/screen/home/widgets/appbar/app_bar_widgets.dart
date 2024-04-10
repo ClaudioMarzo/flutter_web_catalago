@@ -81,7 +81,7 @@ class AppBarWidgets extends StatelessWidget implements PreferredSizeWidget {
                   Flexible(
                     flex: 1,
                     child: ProfilePage(
-                      imputText: 'Faça Login',
+                      inputText: 'Faça Login',
                       onPreesed: () {
                         showDialog(
                           context: context,

@@ -58,7 +58,7 @@ class _ProductWidgetState extends State<ProductWidget> {
             const SizedBox(height: 10),
             ButtomCustomWidget(
               onPressed: widget.onPressed,
-              imputText: 'Ver mais informações',
+              inputText: 'Ver mais informações',
             ),
           ],
         ),

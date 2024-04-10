@@ -5,7 +5,7 @@ import 'package:katyfestacatalago/app/domain/entities/user_entity.dart';
 import 'package:katyfestacatalago/app/presentation/bloc/auth/auth_bloc.dart';
 import 'package:katyfestacatalago/app/presentation/widgets/style/text_style.dart';
 import 'package:katyfestacatalago/app/presentation/widgets/style/color_style.dart';
-import 'package:katyfestacatalago/app/presentation/screen/auth/widgets/imput_custom_widgets.dart';
+import 'package:katyfestacatalago/app/presentation/screen/auth/widgets/input_custom_widgets.dart';
 import 'package:katyfestacatalago/app/presentation/screen/auth/widgets/buttom_auth_widgets.dart';
 import 'package:katyfestacatalago/app/presentation/screen/auth/widgets/butttom_google_widgets.dart';
 
@@ -72,19 +72,19 @@ class _AccountWidgetsState extends State<AuthDialogPage> {
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        ImputCustomWidgets(
+                        inputCustomWidgets(
                           focus: textFocusNodeEmail,
-                          textImputType: TextInputType.emailAddress,
+                          textinputType: TextInputType.emailAddress,
                           textController: _textControllerEmail,
-                          imputText: 'E-mail',
+                          inputText: 'E-mail',
                           icon: Icons.person,
                           isPassword: false,
                         ),
-                        ImputCustomWidgets(
+                        inputCustomWidgets(
                           focus: textFocusNodePassword,
-                          textImputType: TextInputType.visiblePassword,
+                          textinputType: TextInputType.visiblePassword,
                           textController: _textControllerPassword,
-                          imputText: 'Senha',
+                          inputText: 'Senha',
                           icon: Icons.lock,
                           isPassword: true,
                         ),
@@ -100,7 +100,7 @@ class _AccountWidgetsState extends State<AuthDialogPage> {
                         flex: 1,
                         child: ButtomAuthWidgets(
                           height: heightButton,
-                          imputText: 'Fazer Login',
+                          inputText: 'Fazer Login',
                           onPressed: () => Modular.get<AuthBloc>().add(
                             UserEntity(
                               email: _textControllerEmail.text,
@@ -113,7 +113,7 @@ class _AccountWidgetsState extends State<AuthDialogPage> {
                         flex: 1,
                         child: ButtomAuthWidgets(
                           height: heightButton,
-                          imputText: 'Cadastrar',
+                          inputText: 'Cadastrar',
                           onPressed: () {},
                         ),
                       )
@@ -126,7 +126,7 @@ class _AccountWidgetsState extends State<AuthDialogPage> {
                       height: heightButton,
                       assetImage: 'assets/images/google.png',
                       sizeImagem: profileimagesize,
-                      imputText: 'Continuar com Google',
+                      inputText: 'Continuar com Google',
                     ),
                   ),
                 ],

@@ -3,12 +3,12 @@ import 'package:katyfestacatalago/app/presentation/widgets/style/text_style.dart
 import 'package:katyfestacatalago/app/presentation/widgets/style/color_style.dart';
 
 class ProfilePage extends StatefulWidget {
-  final String imputText;
+  final String inputText;
   final void Function() onPreesed;
 
   const ProfilePage({
     super.key,
-    required this.imputText,
+    required this.inputText,
     required this.onPreesed,
   });
 
@@ -42,7 +42,7 @@ class _ProfilePageState extends State<ProfilePage> {
           children: [
             Flexible(
               child: Text(
-                widget.imputText,
+                widget.inputText,
                 style: TextStyles.i.textMedium.copyWith(
                   fontSize: 12,
                   color: ColorStyle.i.black,
