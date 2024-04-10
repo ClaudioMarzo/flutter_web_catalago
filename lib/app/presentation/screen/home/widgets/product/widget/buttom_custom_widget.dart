@@ -4,12 +4,12 @@ import 'package:katyfestacatalago/app/presentation/widgets/style/text_style.dart
 
 class ButtomCustomWidget extends StatefulWidget {
   final Function() onPressed;
-  final String imputText;
+  final String inputText;
 
   const ButtomCustomWidget({
     super.key,
     required this.onPressed,
-    required this.imputText,
+    required this.inputText,
   });
 
   @override
@@ -42,7 +42,7 @@ class _ButtomCustomWidgetState extends State<ButtomCustomWidget> {
         child: Align(
           alignment: Alignment.center,
           child: Text(
-            widget.imputText,
+            widget.inputText,
             style: TextStyles.i.textRegular.copyWith(
               fontSize: 16,
               color: ColorStyle.i.white,
