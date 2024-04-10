@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:katyfestacatalago/app/presentation/screen/home/widgets/appbar/cart/cart_page.dart';
+import 'package:katyfestacatalago/app/presentation/screen/cart/cart_page.dart';
 import 'package:katyfestacatalago/app/presentation/screen/home/widgets/appbar/filter/text_filter.dart';
 import 'package:katyfestacatalago/app/presentation/screen/home/widgets/appbar/profile/profile_page.dart';
-import 'package:katyfestacatalago/app/presentation/screen/home/widgets/appbar/auth/auth_dialog_page.dart';
+import 'package:katyfestacatalago/app/presentation/screen/auth/auth_dialog_page.dart';
 
 class AppBarWidgets extends StatelessWidget implements PreferredSizeWidget {
   const AppBarWidgets({super.key});

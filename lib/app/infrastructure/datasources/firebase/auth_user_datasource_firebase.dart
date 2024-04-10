@@ -1,19 +1,21 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:katyfestacatalago/app/infrastructure/dtos/login_dto.dart';
+import 'package:katyfestacatalago/app/domain/entities/user_entity.dart';
 import 'package:katyfestacatalago/app/infrastructure/datasources/interfaces/Iauth_user_datasource.dart';
 
 class AuthUserDatasourceFirebase implements IAuthUserDataSource {
-  final FirebaseAuth _firebaseAuth;
+  final IAuthUserDataSource _firebaseAuth;
 
   AuthUserDatasourceFirebase(this._firebaseAuth);
 
   @override
-  Future<User?> signInWithEmailAndPassword(LoginDto credentials) async {
+  Future<dynamic> signInWithEmailAndPassword(UserEntity credentials) async {
     try {
-      final UserCredential userCredential = await _firebaseAuth.signInWithEmailAndPassword(email: credentials.email, password: credentials.senha);
+      final UserCredential userCredential = await _firebaseAuth.signInWithEmailAndPassword(credentials);
       return userCredential.user!;
+    } on FirebaseAuthException catch (e) {
+      return e.code;
     } catch (e) {
-      return null;
+      return e;
     }
   }
 }

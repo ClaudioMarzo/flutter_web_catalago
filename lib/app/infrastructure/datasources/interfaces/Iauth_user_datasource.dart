@@ -1,6 +1,5 @@
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:katyfestacatalago/app/infrastructure/dtos/login_dto.dart';
+import 'package:katyfestacatalago/app/domain/entities/user_entity.dart';
 
 abstract class IAuthUserDataSource {
-  Future<User?> signInWithEmailAndPassword(LoginDto credentials);
+  Future<dynamic> signInWithEmailAndPassword(UserEntity credentials);
 }

@@ -1,7 +1,6 @@
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:katyfestacatalago/app/infrastructure/dtos/sign_up_dto.dart';
+import 'package:katyfestacatalago/app/domain/entities/user_entity.dart';
 
 abstract class ICreateUserDataSource {
-  Future<User?> createUserWithEmailAndPassword(SignUpDto credentials);
-  Future<User?> createUserWithGoogleAccount();
+  Future<dynamic> createUserWithEmailAndPassword(UserEntity credentials);
+  Future<dynamic> createUserWithGoogleAccount();
 }

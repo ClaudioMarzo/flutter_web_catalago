@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_modular/flutter_modular.dart';
+import 'package:katyfestacatalago/app/presentation/bloc/auth/auth_bloc.dart';
 import 'package:katyfestacatalago/app/presentation/screen/home/widgets/appbar/app_bar_widgets.dart';
 import 'package:katyfestacatalago/app/presentation/screen/home/widgets/product/product_widget.dart';
 
