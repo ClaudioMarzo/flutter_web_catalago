@@ -1,21 +1,20 @@
 import 'package:katyfestacatalago/app/domain/entities/user_entity.dart';
 
 class SignUpDto extends UserEntity {
-  String emailSignUp;
-  String passwordSingUp;
-
   SignUpDto({
-    required this.emailSignUp,
-    required this.passwordSingUp,
-  }) : super(
-          email: emailSignUp,
-          senha: passwordSingUp,
-        );
+    required super.email,
+    required super.senha,
+  });
 
-  SignUpDto copyWith({String? emailSignUp, String? passwordSingUp}) {
+  SignUpDto copyWith({String? email, String? senha}) {
     return SignUpDto(
-      emailSignUp: emailSignUp ?? this.emailSignUp,
-      passwordSingUp: passwordSingUp ?? this.passwordSingUp,
+      email: _validateEmail(email!) ? email : email,
+      senha: senha!,
     );
+  }
+
+  static bool _validateEmail(String email) {
+    final RegExp emailRegex = RegExp(r'^[a-zA-Z0-9.]+@[a-zA-Z0-9]+\.[a-zA-Z]+');
+    return emailRegex.hasMatch(email);
   }
 }
